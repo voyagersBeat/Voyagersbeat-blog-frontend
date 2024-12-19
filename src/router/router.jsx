@@ -10,7 +10,7 @@ import OneSingleBlog from "../pages/blogs/singleBlog/OneSingleBlog";
 import Login from "../pages/user/Login";
 import Register from "../pages/user/Register";
 import AdminPage from "../pages/admin/AdminPage";
-import Dashboard from "../pages/admin/dashboard/dashboard";
+import Dashboard from "../pages/admin/dashboard/Dashboard.jsx";
 import AddNewPost from "../pages/admin/post/AddNewPost";
 import ManagePost from "../pages/admin/post/ManagePost";
 import ManageUsers from "../pages/admin/post/ManageUsers";
