@@ -1,5 +1,5 @@
 import React from "react";
-import AdminIMG from "../../assets/Admin.png";
+import AdminIMG from "../../assets/admin.png";
 import { NavLink } from "react-router-dom";
 import { useLogoutUserMutation } from "../../redux/features/auth/AuthApi";
 import { useDispatch, useSelector } from "react-redux";
