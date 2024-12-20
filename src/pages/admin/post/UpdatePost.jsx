@@ -78,8 +78,14 @@ const UpdatePost = () => {
         rating: rating || blog.post.rating,
       };
       console.log("update post is", updatePost);
+      const response = await updateBlog({
+        id,
+        ...updatePost,
+        headers: {
+          Authorization: `Bearer ${localStorage.getItem("authToken")}`,
+        },
+      }).unwrap();
 
-      const response = await updateBlog({ id, ...updatePost }).unwrap();
       console.log("response is ", response);
       alert("Blog is updated successfully");
       refetch();
