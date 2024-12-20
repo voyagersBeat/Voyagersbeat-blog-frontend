@@ -6,7 +6,7 @@ const Home = () => {
   return (
     <>
       {/* {alternate bg color is e0ebeb, e6e6e6} */}
-      <div className="bg-[#eeeded] text-primary container mx-auto mt-32 p-8">
+      <div className="bg-white text-primary container mx-auto mt-32 p-8">
         <Hero />
         <Blogs />
       </div>
