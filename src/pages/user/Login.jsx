@@ -57,15 +57,10 @@ const Login = () => {
     try {
       const response = await loginUser(data).unwrap();
       const { token, user } = response;
-
-      // Save token in cookies
       document.cookie = `token=${token}; path=/`;
-
-      // Dispatch setUser to update Redux state and local storage
       dispatch(setUser({ user }));
-
       alert(`Login Successful, ${user.username}`);
-      navigate("/"); // Redirect to homepage after login
+      navigate("/");
     } catch (error) {
       console.log("Login failed:", error);
       setGeneralError("Invalid email or password");
