@@ -59,10 +59,7 @@ const Login = () => {
       const { token, user } = response;
 
       // Save token in cookies
-      // document.cookie = `token=${token}; path=/`;
-
-      document.cookie = `token=${token}; path=/; Secure; HttpOnly; SameSite=Strict`;
-
+      document.cookie = `token=${token}; path=/`;
 
       // Dispatch setUser to update Redux state and local storage
       dispatch(setUser({ user }));
