@@ -1,8 +1,5 @@
 import React, { useState } from "react";
-import {
-  useLoginUserMutation,
-  useLogoutUserMutation,
-} from "../../redux/features/auth/authApi";
+import { useLoginUserMutation } from "../../redux/features/auth/AuthApi";
 import { Link, useNavigate } from "react-router-dom";
 import { useDispatch } from "react-redux";
 import { setUser } from "../../redux/features/auth/authSlice";
