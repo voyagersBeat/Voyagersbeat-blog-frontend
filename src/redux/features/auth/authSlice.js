@@ -1,13 +1,6 @@
 import { createSlice } from "@reduxjs/toolkit";
 
-// Utility function to check if the token exists in cookies
-const isTokenPresentInCookies = () => {
-  const token = document.cookie
-    .split(";")
-    .find((cookie) => cookie.trim().startsWith("token="));
-  return !!token;
-};
-
+// Utility function to check if the token exists in cooki
 // Utility function to get the initial state from localStorage
 const loadUserFromLocalStorage = () => {
   try {
