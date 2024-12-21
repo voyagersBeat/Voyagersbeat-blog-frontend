@@ -1,17 +1,21 @@
 import { createSlice } from "@reduxjs/toolkit";
 
-// Utility function to check if the token exists in cooki
-// Utility function to get the initial state from localStorage
+// Check if token exists in cookies
+const usTokenAvailableCookie = () => {
+  const token = document.cookie
+    .split(";")
+    .find((cookie) => cookie.trim().startsWith("token="));
+  return !!token; // Returns true if token exists
+};
+
+// Load user from local storage
 const loadUserFromLocalStorage = () => {
   try {
-    // if (!isTokenPresentInCookies()) {
-    //   localStorage.removeItem('user');
-    //   return { user: null };
-    // }
-
-    const serializedState = localStorage.getItem("user");
-    if (serializedState === null) return { user: null };
-    return { user: JSON.parse(serializedState) };
+    const serialState = localStorage.getItem("user");
+    if (serialState === null) {
+      return { user: null };
+    }
+    return { user: JSON.parse(serialState) };
   } catch (err) {
     return { user: null };
   }
@@ -25,12 +29,10 @@ const authSlice = createSlice({
   reducers: {
     setUser: (state, action) => {
       state.user = action.payload.user;
-      // Save user state to localStorage
       localStorage.setItem("user", JSON.stringify(state.user));
     },
     logout: (state) => {
       state.user = null;
-      // Remove user from localStorage
       localStorage.removeItem("user");
     },
   },
